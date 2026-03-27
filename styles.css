@@ -1076,7 +1076,7 @@ a {
   .nav-item-dropdown.is-open .submenu {
     margin-top: 2px;
     padding: 0 0 0 32px;
-    max-height: 280px;
+    max-height: 960px;
   }
 
   .submenu a {
