@@ -1194,21 +1194,6 @@ a {
     transform: rotate(-12deg);
   }
 
-  .decor-laptop {
-    left: 58%;
-    top: 118px;
-    width: 50px;
-    transform: translateX(-50%) rotate(-10deg);
-  }
-
-  .decor-ruler {
-    left: 16px;
-    top: 248px;
-    width: 48px;
-    transform: rotate(-18deg);
-    opacity: 0.42;
-  }
-
   .decor-apple {
     right: 34px;
     bottom: 44px;
@@ -1260,10 +1245,6 @@ a {
       top: 82px;
     }
 
-    .decor-laptop {
-      display: none;
-    }
-
     .decor-pencil {
       right: 86px;
       bottom: 124px;
@@ -1272,11 +1253,6 @@ a {
     .decor-cap {
       left: 92px;
       bottom: 86px;
-    }
-
-    .decor-ruler {
-      left: 64px;
-      top: 258px;
     }
 
     .decor-apple {
