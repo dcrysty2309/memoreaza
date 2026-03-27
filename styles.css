@@ -856,29 +856,6 @@ a {
   }
 }
 
-@media (max-width: 475px) {
-  .header-actions .btn-header-login {
-    width: 40px;
-    height: 40px;
-    min-height: 40px;
-    padding: 0;
-    border-radius: 12px;
-    border: 1px solid var(--line);
-    background: transparent;
-    color: var(--ink);
-  }
-
-  .header-actions .btn-header-login span {
-    display: none;
-  }
-
-  .header-actions .btn-header-login i {
-    display: inline-block;
-    margin-right: 0;
-    font-size: 16px;
-  }
-}
-
 @media (max-width: 375px) {
   .topbar {
     gap: 10px;
@@ -1029,7 +1006,7 @@ a {
   }
 
   .brand-logo {
-    height: 44px;
+    height: 35px;
   }
 
   .header-actions {
