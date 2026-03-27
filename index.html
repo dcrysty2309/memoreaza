@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memoreaza | Invata mai clar</title>
+    <meta
+      name="description"
+      content="Memorează este o aplicație educațională pentru învățare activă, recapitulare inteligentă și progres vizibil."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <button class="menu-toggle" type="button" aria-label="Deschide meniul">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a class="brand" href="#hero" aria-label="Memoreaza">
+          <img class="brand-logo" src="./ChatGPT_Image_27_mar._2026__11_13_42__1___1_-removebg-preview.png" alt="Memoreaza" />
+        </a>
+
+        <nav class="nav" aria-label="Navigație principală">
+          <a class="is-active" href="#hero">Acasă</a>
+          <a href="#hero">Despre</a>
+          <div class="nav-item nav-item-dropdown">
+            <button class="nav-dropdown-trigger" type="button" aria-expanded="false">
+              <span>Cursuri</span>
+              <i class="fa-solid fa-angle-down"></i>
+            </button>
+            <div class="submenu">
+              <a href="#hero">Cursuri video</a>
+              <a href="#hero">Fișe de recapitulare</a>
+              <a href="#hero">Teste rapide</a>
+            </div>
+          </div>
+          <a href="#hero">Contact</a>
+          <a href="./styleguide.html">Style Guide</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="btn btn-header-outline" href="#hero">
+            <i class="fa-regular fa-user"></i>
+            <span>Autentificare</span>
+          </a>
+          <a class="btn btn-header-login" href="#hero">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Înregistrează-te</span>
+          </a>
+        </div>
+      </header>
+      <div class="menu-overlay" aria-hidden="true"></div>
+
+      <main>
+        <section class="hero" id="hero">
+          <div class="hero-copy">
+            <div class="eyebrow">
+              <span class="eyebrow-icon" aria-hidden="true">
+                <i class="fa-solid fa-check"></i>
+              </span>
+              <span class="eyebrow-text">Adaptat conform programei naționale</span>
+            </div>
+            <h1>
+              Idei complexe, explicate
+              <span class="hero-highlight">
+                simplu
+                <img
+                  class="hero-underline"
+                  src="https://www.radiustheme.com/demo/wordpress/themes/quiklearn/wp-content/themes/quiklearn/assets/element/underline.svg"
+                  alt=""
+                />
+              </span>
+            </h1>
+            <p class="hero-text">
+              Lecții structurate, recapitulare inteligentă și progres vizibil într-o singură
+              platformă educațională.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#hero">
+                <span>Vezi lecțiile</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <img
+              class="hero-image"
+              src="./37b40613-eb63-4be9-9ed3-d1ed7ab9e180.png"
+              alt=""
+            />
+          </div>
+        </section>
+
+      </main>
+    </div>
+    <script>
+      (() => {
+        const topbar = document.querySelector(".topbar");
+        const toggle = document.querySelector(".menu-toggle");
+        const dropdown = document.querySelector(".nav-item-dropdown");
+        const trigger = document.querySelector(".nav-dropdown-trigger");
+        const overlay = document.querySelector(".menu-overlay");
+
+        if (toggle && topbar) {
+          toggle.addEventListener("click", () => {
+            const open = topbar.classList.toggle("is-open");
+            toggle.setAttribute("aria-expanded", String(open));
+            if (overlay) overlay.classList.toggle("is-open", open);
+          });
+        }
+
+        if (overlay && topbar && toggle) {
+          overlay.addEventListener("click", () => {
+            topbar.classList.remove("is-open");
+            overlay.classList.remove("is-open");
+            toggle.setAttribute("aria-expanded", "false");
+          });
+        }
+
+        if (dropdown && trigger) {
+          trigger.addEventListener("click", (event) => {
+            if (window.innerWidth <= 1280) {
+              const open = dropdown.classList.toggle("is-open");
+              trigger.setAttribute("aria-expanded", String(open));
+            }
+          });
+        }
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 1024 && topbar) {
+            topbar.classList.remove("is-open");
+            if (overlay) overlay.classList.remove("is-open");
+            if (toggle) toggle.setAttribute("aria-expanded", "false");
+          }
+          if (window.innerWidth > 1280 && dropdown && trigger) {
+            dropdown.classList.remove("is-open");
+            trigger.setAttribute("aria-expanded", "false");
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
