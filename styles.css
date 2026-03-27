@@ -834,7 +834,7 @@ a {
   }
 
   .hero-actions {
-    justify-content: stretch;
+    justify-content: center;
   }
 
   .hero-image {
