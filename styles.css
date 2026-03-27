@@ -203,7 +203,7 @@ a {
   top: calc(100% + 4px);
   left: 0;
   width: 0;
-  height: 3px;
+  height: 6px;
   border-radius: 45px;
   background-color: var(--theme-primary);
   transform: none;
