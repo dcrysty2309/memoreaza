@@ -287,17 +287,17 @@ a {
 }
 
 .btn-primary {
-  background: var(--theme-primary);
-  border: 1px solid transparent;
-  color: var(--white);
-  box-shadow: 0 16px 30px rgba(84, 62, 232, 0.22);
+  background: transparent;
+  border: 1px solid var(--theme-primary);
+  color: var(--theme-primary);
+  box-shadow: none;
 }
 
 .btn-primary:hover {
-  background: transparent;
+  background: var(--theme-primary);
   border-color: var(--theme-primary);
-  color: var(--theme-primary);
-  box-shadow: none;
+  color: var(--white);
+  box-shadow: 0 16px 30px rgba(84, 62, 232, 0.22);
 }
 
 .btn-dark {
@@ -1303,7 +1303,7 @@ a {
   }
 
   .eyebrow {
-    justify-content: center;
+    display: none;
   }
 
   .hero-visual {
