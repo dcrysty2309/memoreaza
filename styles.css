@@ -1167,14 +1167,14 @@ a {
   }
 
   .decor-book {
-    top: 104px;
+    top: 50px;
     left: 18px;
     width: 54px;
     transform: rotate(-15deg);
   }
 
   .decor-board {
-    top: 74px;
+    top: 20px;
     right: 26px;
     width: 58px;
     transform: rotate(11deg);
@@ -1182,21 +1182,21 @@ a {
 
   .decor-pencil {
     right: 18px;
-    bottom: 138px;
+    bottom: 165px;
     width: 52px;
     transform: rotate(22deg);
   }
 
   .decor-cap {
     left: 42px;
-    bottom: 92px;
+    bottom: 55px;
     width: 54px;
     transform: rotate(-12deg);
   }
 
   .decor-laptop {
-    left: 52%;
-    top: 196px;
+    left: 58%;
+    top: 118px;
     width: 50px;
     transform: translateX(-50%) rotate(-10deg);
   }
@@ -1261,9 +1261,7 @@ a {
     }
 
     .decor-laptop {
-      left: 48%;
-      top: 214px;
-      width: 52px;
+      display: none;
     }
 
     .decor-pencil {
