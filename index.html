@@ -324,12 +324,9 @@
     </aside>
     <script>
       (() => {
-        const topbar = document.querySelector(".topbar");
         const toggle = document.querySelector(".menu-toggle");
         const desktopDropdown = document.querySelector(".nav .nav-item-dropdown");
         const desktopTrigger = document.querySelector(".nav .nav-dropdown-trigger");
-        const desktopAccountMenu = document.querySelector(".header-account-menu");
-        const desktopAccountTrigger = document.querySelector(".btn-header-account");
         const overlay = document.querySelector(".menu-overlay");
         const drawer = document.querySelector(".mobile-drawer-panel");
         const mobileDropdown = document.querySelector(".mobile-drawer-panel .nav-item-dropdown");
@@ -380,19 +377,18 @@
         }
 
         if (desktopDropdown && desktopTrigger) {
-          desktopTrigger.addEventListener("click", () => {
+          const syncDesktopDropdown = (open) => {
             if (window.innerWidth > 1024) {
-              const open = desktopDropdown.classList.toggle("is-open");
               desktopTrigger.setAttribute("aria-expanded", String(open));
             }
-          });
-        }
+          };
 
-        if (desktopAccountMenu && desktopAccountTrigger) {
-          desktopAccountTrigger.addEventListener("click", () => {
-            if (window.innerWidth > 1024 && document.body.classList.contains("is-logged-in")) {
-              const open = desktopAccountMenu.classList.toggle("is-open");
-              desktopAccountTrigger.setAttribute("aria-expanded", String(open));
+          desktopDropdown.addEventListener("mouseenter", () => syncDesktopDropdown(true));
+          desktopDropdown.addEventListener("mouseleave", () => syncDesktopDropdown(false));
+          desktopDropdown.addEventListener("focusin", () => syncDesktopDropdown(true));
+          desktopDropdown.addEventListener("focusout", (event) => {
+            if (!desktopDropdown.contains(event.relatedTarget)) {
+              syncDesktopDropdown(false);
             }
           });
         }
@@ -419,21 +415,6 @@
           if (mobileDropdown && mobileTrigger && window.innerWidth > 1024) {
             mobileDropdown.classList.remove("is-open");
             mobileTrigger.setAttribute("aria-expanded", "false");
-          }
-          if (desktopAccountMenu && window.innerWidth <= 1024) {
-            desktopAccountMenu.classList.remove("is-open");
-            if (desktopAccountTrigger) desktopAccountTrigger.setAttribute("aria-expanded", "false");
-          }
-        });
-
-        document.addEventListener("click", (event) => {
-          if (
-            desktopAccountMenu &&
-            desktopAccountMenu.classList.contains("is-open") &&
-            !desktopAccountMenu.contains(event.target)
-          ) {
-            desktopAccountMenu.classList.remove("is-open");
-            if (desktopAccountTrigger) desktopAccountTrigger.setAttribute("aria-expanded", "false");
           }
         });
 
