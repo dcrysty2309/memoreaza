@@ -19,7 +19,7 @@
       rel="stylesheet"
       href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260328h" />
+    <link rel="stylesheet" href="./styles.css?v=20260328i" />
   </head>
   <body class="is-guest">
     <div class="page-shell">
@@ -148,7 +148,7 @@
               <span class="hero-line">
                 explicate
                 <span class="hero-highlight">
-                  simplu6
+                  simplu7
                   <img
                     class="hero-underline"
                     src="https://www.radiustheme.com/demo/wordpress/themes/quiklearn/wp-content/themes/quiklearn/assets/element/underline.svg"
@@ -305,14 +305,7 @@
         const drawer = document.querySelector(".mobile-drawer-panel");
         const mobileDropdown = document.querySelector(".mobile-drawer-panel .nav-item-dropdown");
         const mobileTrigger = document.querySelector(".mobile-drawer-panel .nav-dropdown-trigger");
-        const mobileTriggerIcon = mobileTrigger ? mobileTrigger.querySelector(".fa-solid") : null;
         const closeButton = document.querySelector(".mobile-drawer-panel .mobile-drawer-close");
-
-        const syncTriggerIcon = (open) => {
-          if (!mobileTriggerIcon) return;
-          mobileTriggerIcon.classList.toggle("fa-angle-down", !open);
-          mobileTriggerIcon.classList.toggle("fa-angle-up", open);
-        };
 
         const closeMenu = () => {
           if (drawer) drawer.classList.remove("is-open");
@@ -352,7 +345,6 @@
             if (window.innerWidth <= 1024) {
               const open = mobileDropdown.classList.toggle("is-open");
               mobileTrigger.setAttribute("aria-expanded", String(open));
-              syncTriggerIcon(open);
             }
           });
         }
@@ -373,11 +365,8 @@
           if (mobileDropdown && mobileTrigger && window.innerWidth > 1024) {
             mobileDropdown.classList.remove("is-open");
             mobileTrigger.setAttribute("aria-expanded", "false");
-            syncTriggerIcon(false);
           }
         });
-
-        syncTriggerIcon(mobileDropdown?.classList.contains("is-open"));
       })();
     </script>
   </body>
