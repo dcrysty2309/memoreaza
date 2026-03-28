@@ -833,13 +833,15 @@ a {
   .mobile-drawer-panel {
     position: fixed;
     top: 0;
-    bottom: 0;
     left: 0;
-    z-index: 50;
+    z-index: 1001;
     display: flex;
     width: min(80vw, 300px);
     min-width: 0;
-    height: auto;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
     margin: 0;
     padding: 18px 20px 17px;
     border: 0;
@@ -1277,6 +1279,7 @@ a {
   @supports (padding: max(0px)) {
     .mobile-drawer-panel {
       padding-left: max(20px, env(safe-area-inset-left));
+      padding-bottom: max(17px + env(safe-area-inset-bottom), 17px);
     }
   }
 
