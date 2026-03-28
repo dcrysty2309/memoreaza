@@ -69,12 +69,13 @@ a {
 .menu-overlay {
   position: fixed;
   inset: 0;
-  z-index: 40;
-  background: rgba(16, 24, 40, 0.42);
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.24s ease, visibility 0.24s ease;
+  transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
 }
 
 .menu-overlay.is-open {
@@ -837,7 +838,6 @@ a {
     z-index: 1001;
     display: flex;
     width: min(80vw, 300px);
-    min-width: 0;
     height: 100vh;
     height: 100dvh;
     max-height: 100vh;
@@ -847,11 +847,8 @@ a {
     border: 0;
     border-radius: 0;
     background: #ffffff;
-    box-shadow: 0 24px 60px rgba(16, 24, 40, 0.16);
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
     flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    gap: 0;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding-bottom: env(safe-area-inset-bottom);
@@ -871,8 +868,7 @@ a {
     display: flex;
     flex: 0 0 auto;
     min-height: auto;
-    padding: 18px 20px 17px;
-    padding-top: 0;
+    padding: 12px 20px 17px;
     flex-direction: column;
     gap: 0;
     overflow: visible;
@@ -880,12 +876,12 @@ a {
 
   .mobile-drawer-topbar {
     display: flex;
+    height: 60px;
     align-items: center;
     justify-content: space-between;
-    min-height: 60px;
     margin: 0;
-    padding: 0 20px;
-    border-bottom: 1px solid rgba(24, 33, 46, 0.07);
+    padding: 0 16px;
+    border-bottom: 1px solid #eee;
     background: #ffffff;
   }
 
