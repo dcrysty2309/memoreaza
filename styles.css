@@ -899,6 +899,11 @@ a {
   .mobile-drawer-brand {
     display: inline-flex;
     align-items: center;
+    flex-shrink: 0;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   .mobile-drawer-brand img {
@@ -906,6 +911,10 @@ a {
     width: auto;
     height: 34px;
     object-fit: contain;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   .mobile-drawer-close {
