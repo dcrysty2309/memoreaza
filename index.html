@@ -64,6 +64,27 @@
             <i class="fa-regular fa-user"></i>
             <span>Autentificare</span>
           </a>
+          <div class="header-account-menu">
+            <button class="btn btn-header-account" type="button" aria-expanded="false">
+              <span class="header-account-chip"><span>AP</span></span>
+              <span>Contul meu</span>
+              <i class="fa-solid fa-angle-down"></i>
+            </button>
+            <div class="header-account-dropdown" aria-hidden="true">
+              <div class="header-account-summary">
+                <h3>Andrei Popescu</h3>
+                <p>andrei@email.com</p>
+              </div>
+              <a class="header-account-link" href="#hero">
+                <i class="fa-solid fa-gear"></i>
+                <span>Setări</span>
+              </a>
+              <a class="header-account-link" href="#hero">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Deconectare</span>
+              </a>
+            </div>
+          </div>
           <a class="btn btn-header-login" href="#hero">
             <i class="fa-solid fa-user-plus"></i>
             <span>Cont nou</span>
@@ -167,6 +188,9 @@
                 <span>Vezi lecțiile</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
+              <button class="btn btn-ghost hero-state-toggle" id="stateToggle" type="button">
+                Simulează user
+              </button>
             </div>
           </div>
 
@@ -215,12 +239,9 @@
             <h3>Andrei Popescu</h3>
             <p>andrei@email.com</p>
           </div>
-        </div>
-
-        <div class="mobile-drawer-section mobile-drawer-user-links">
-          <a href="#hero">Dashboard</a>
-          <a href="#hero">Setări</a>
-          <a href="#hero">Logout</a>
+          <button class="mobile-drawer-card-settings" type="button" aria-label="Setări cont">
+            <i class="fa-solid fa-gear"></i>
+          </button>
         </div>
 
         <div class="mobile-drawer-section-label">Navigație</div>
@@ -292,7 +313,13 @@
           <span>Style Guide</span>
         </a>
 
-        <div class="mobile-drawer-footer">© 2026 Memoreaza. Toate drepturile rezervate.</div>
+        <div class="mobile-drawer-footer">
+          <a class="mobile-drawer-logout" href="#hero">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Deconectare</span>
+          </a>
+          <div class="mobile-drawer-copyright">© 2026 Memoreaza</div>
+        </div>
       </div>
     </aside>
     <script>
@@ -301,11 +328,14 @@
         const toggle = document.querySelector(".menu-toggle");
         const desktopDropdown = document.querySelector(".nav .nav-item-dropdown");
         const desktopTrigger = document.querySelector(".nav .nav-dropdown-trigger");
+        const desktopAccountMenu = document.querySelector(".header-account-menu");
+        const desktopAccountTrigger = document.querySelector(".btn-header-account");
         const overlay = document.querySelector(".menu-overlay");
         const drawer = document.querySelector(".mobile-drawer-panel");
         const mobileDropdown = document.querySelector(".mobile-drawer-panel .nav-item-dropdown");
         const mobileTrigger = document.querySelector(".mobile-drawer-panel .nav-dropdown-trigger");
         const closeButton = document.querySelector(".mobile-drawer-panel .mobile-drawer-close");
+        const stateToggle = document.querySelector("#stateToggle");
 
         const closeMenu = () => {
           if (drawer) drawer.classList.remove("is-open");
@@ -358,6 +388,30 @@
           });
         }
 
+        if (desktopAccountMenu && desktopAccountTrigger) {
+          desktopAccountTrigger.addEventListener("click", () => {
+            if (window.innerWidth > 1024 && document.body.classList.contains("is-logged-in")) {
+              const open = desktopAccountMenu.classList.toggle("is-open");
+              desktopAccountTrigger.setAttribute("aria-expanded", String(open));
+            }
+          });
+        }
+
+        const setAuthState = (loggedIn) => {
+          document.body.classList.toggle("is-guest", !loggedIn);
+          document.body.classList.toggle("is-logged-in", loggedIn);
+          if (stateToggle) {
+            stateToggle.textContent = loggedIn ? "Simulează guest" : "Simulează user";
+          }
+        };
+
+        if (stateToggle) {
+          stateToggle.addEventListener("click", () => {
+            const loggedIn = !document.body.classList.contains("is-logged-in");
+            setAuthState(loggedIn);
+          });
+        }
+
         window.addEventListener("resize", () => {
           if (window.innerWidth > 1024) {
             closeMenu();
@@ -366,7 +420,24 @@
             mobileDropdown.classList.remove("is-open");
             mobileTrigger.setAttribute("aria-expanded", "false");
           }
+          if (desktopAccountMenu && window.innerWidth <= 1024) {
+            desktopAccountMenu.classList.remove("is-open");
+            if (desktopAccountTrigger) desktopAccountTrigger.setAttribute("aria-expanded", "false");
+          }
         });
+
+        document.addEventListener("click", (event) => {
+          if (
+            desktopAccountMenu &&
+            desktopAccountMenu.classList.contains("is-open") &&
+            !desktopAccountMenu.contains(event.target)
+          ) {
+            desktopAccountMenu.classList.remove("is-open");
+            if (desktopAccountTrigger) desktopAccountTrigger.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        setAuthState(document.body.classList.contains("is-logged-in"));
       })();
     </script>
   </body>
