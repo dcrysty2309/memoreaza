@@ -2,7 +2,7 @@
 <html lang="ro">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Memoreaza | Invata mai clar</title>
     <meta
       name="description"
@@ -319,6 +319,8 @@
           if (drawer) drawer.classList.remove("is-open");
           if (overlay) overlay.classList.remove("is-open");
           if (toggle) toggle.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("menu-open");
+          if (drawer) drawer.setAttribute("aria-hidden", "true");
           if (closeButton) closeButton.blur();
         };
 
@@ -327,6 +329,8 @@
             const open = drawer.classList.toggle("is-open");
             toggle.setAttribute("aria-expanded", String(open));
             if (overlay) overlay.classList.toggle("is-open", open);
+            document.body.classList.toggle("menu-open", open);
+            drawer.setAttribute("aria-hidden", String(!open));
           });
         }
 

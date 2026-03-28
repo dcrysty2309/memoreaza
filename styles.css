@@ -39,6 +39,11 @@ body {
   background: var(--bg);
 }
 
+body.menu-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
 h1,
 h2,
 h3,
@@ -68,12 +73,14 @@ a {
   background: rgba(16, 24, 40, 0.42);
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: opacity 0.24s ease, visibility 0.24s ease;
 }
 
 .menu-overlay.is-open {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .topbar {
@@ -771,6 +778,13 @@ a {
     box-shadow: 0 10px 28px rgba(16, 24, 40, 0.06);
   }
 
+  @supports (padding: max(0px)) {
+    .topbar {
+      padding-left: max(var(--layout-gutter), env(safe-area-inset-left));
+      padding-right: max(var(--layout-gutter), env(safe-area-inset-right));
+    }
+  }
+
   .menu-toggle {
     display: inline-flex;
     justify-self: start;
@@ -823,8 +837,8 @@ a {
     left: 0;
     z-index: 50;
     display: flex;
-    width: min(82vw, 320px);
-    min-width: 320px;
+    width: min(80vw, 300px);
+    min-width: 0;
     height: auto;
     margin: 0;
     padding: 18px 20px 17px;
@@ -837,12 +851,17 @@ a {
     justify-content: flex-start;
     gap: 0;
     overflow: hidden;
-    transform: translateX(-100%);
-    transition: transform 0.24s ease;
+    padding-bottom: calc(17px + env(safe-area-inset-bottom));
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transition: transform 0.3s ease;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    will-change: transform;
   }
 
   .mobile-drawer-panel.is-open {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
   }
 
   .mobile-drawer-body {
@@ -1255,6 +1274,12 @@ a {
     text-align: center;
   }
 
+  @supports (padding: max(0px)) {
+    .mobile-drawer-panel {
+      padding-left: max(20px, env(safe-area-inset-left));
+    }
+  }
+
   .hero {
     padding: 0 var(--layout-gutter);
   }
@@ -1368,8 +1393,8 @@ a {
   }
 
   .mobile-drawer-panel {
-    width: min(82vw, 320px);
-    min-width: 320px;
+    width: min(80vw, 300px);
+    min-width: 0;
     padding: 18px 20px 17px;
   }
 
