@@ -678,6 +678,83 @@ a {
   padding: 72px 0 96px;
 }
 
+.feature-strip {
+  position: relative;
+  margin: 64px calc(50% - 50vw) 0;
+  padding: 42px 0;
+  background: linear-gradient(180deg, #1e183f 0%, #1a1638 100%);
+  overflow: hidden;
+}
+
+.feature-strip-pattern {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.34;
+}
+
+.feature-strip-grid {
+  position: relative;
+  z-index: 1;
+  width: min(1414px, calc(100% - (var(--layout-gutter) * 2)));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.feature-strip-item {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.feature-strip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  color: #fff;
+  font-size: 28px;
+}
+
+.feature-strip-icon-mint {
+  color: #71f0cd;
+}
+
+.feature-strip-icon-gold {
+  color: #f4c84c;
+}
+
+.feature-strip-icon-coral {
+  color: #ff7f73;
+}
+
+.feature-strip-icon-blue {
+  color: #57a7ff;
+}
+
+.feature-strip-copy h3 {
+  margin: 0 0 10px;
+  color: #f7f5ff;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.feature-strip-copy p {
+  margin: 0;
+  color: rgba(229, 226, 245, 0.72);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
 .section-intro {
   max-width: 720px;
   margin-bottom: 28px;
@@ -1531,6 +1608,15 @@ a {
     padding: 56px var(--layout-gutter) 72px;
   }
 
+  .feature-strip {
+    padding: 36px 0;
+  }
+
+  .feature-strip-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 20px;
+  }
+
   .sg-card {
     padding: 22px;
   }
@@ -1573,6 +1659,35 @@ a {
 
   .hero-image {
     width: min(100%, 320px);
+  }
+
+  .feature-strip {
+    padding: 30px 0;
+  }
+
+  .feature-strip-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .feature-strip-item {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .feature-strip-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .feature-strip-copy h3 {
+    font-size: 17px;
+  }
+
+  .feature-strip-copy p {
+    font-size: 14px;
+    line-height: 1.55;
   }
 }
 
