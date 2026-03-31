@@ -791,23 +791,28 @@ a {
 }
 
 .about-showcase {
-  width: min(1414px, calc(100% - (var(--layout-gutter) * 2)));
-  margin: 72px auto 0;
+  width: auto;
+  margin: 0 calc(50% - 50vw) 0;
+  padding: 72px max(var(--layout-gutter), calc(50vw - 707px));
   display: grid;
-  grid-template-columns: minmax(340px, 0.94fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(34px, 4.4vw, 82px);
-  align-items: start;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
 }
 
 .about-showcase-media {
   display: grid;
   grid-template-columns: minmax(210px, 250px) minmax(0, 1fr);
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 146px 1fr;
   grid-template-areas:
     "info large"
     "small large";
   gap: 22px 24px;
   align-items: stretch;
+  height: 530px;
+  max-height: 530px;
 }
 
 .about-showcase-image {
@@ -883,14 +888,17 @@ a {
   font-weight: 600;
 }
 
-.about-showcase-info-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 58px;
-  height: 58px;
+.about-showcase-info-icons {
+  display: grid;
+  gap: 12px;
+  align-content: center;
+  justify-items: center;
   color: rgba(255, 255, 255, 0.96);
-  font-size: 33px;
+}
+
+.about-showcase-info-icons i {
+  font-size: 35px;
+  line-height: 1;
 }
 
 .about-showcase-overlay {
@@ -941,8 +949,12 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  justify-self: start;
+  align-self: center;
+  max-width: 500px;
+  width: 100%;
   min-width: 0;
-  padding: 18px 0;
+  padding: 0;
 }
 
 .about-showcase-kicker {
@@ -950,10 +962,8 @@ a {
   align-items: center;
   gap: 8px;
   width: fit-content;
-  margin: 0 0 16px;
-  padding: 9px 14px;
-  border-radius: 999px;
-  background: rgba(84, 62, 232, 0.08);
+  margin: 0 0 12px;
+  padding: 0;
   color: var(--theme-primary);
   font-size: 14px;
   line-height: 1.35;
@@ -961,36 +971,37 @@ a {
 }
 
 .about-showcase-copy h2 {
-  max-width: none;
-  font-size: clamp(2.5rem, 4.3vw, 4.1rem);
-  line-height: 1.02;
+  max-width: 100%;
+  font-size: 36px;
+  line-height: 50px;
   letter-spacing: -0.03em;
   font-weight: 600;
 }
 
 .about-showcase-description {
   max-width: none;
-  margin: 22px 0 0;
+  margin: 18px 0 0;
   color: hsl(var(--muted-foreground));
-  font-size: 18px;
-  line-height: 1.72;
+  font-size: 16px;
+  line-height: 1.68;
 }
 
 .about-showcase-benefits {
   display: grid;
-  gap: 14px;
-  margin-top: 30px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 32px;
 }
 
 .about-benefit {
   display: grid;
-  grid-template-columns: 52px minmax(0, 1fr);
-  gap: 14px;
-  align-items: center;
-  padding: 16px 18px;
-  border: 1px solid rgba(24, 33, 46, 0.08);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.74);
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 22px 30px;
+  border: 1px solid #f0edff;
+  border-radius: 0;
+  background: #faf9ff;
 }
 
 .about-benefit-soft {
@@ -1001,23 +1012,28 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 999px;
-  background: rgba(84, 62, 232, 0.1);
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
   color: var(--theme-primary);
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .about-benefit-icon-soft {
-  background: rgba(24, 33, 46, 0.05);
   color: #7f879f;
+}
+
+.about-benefit-icon svg {
+  display: block;
+  width: 34px;
+  height: 34px;
 }
 
 .about-benefit-copy h3 {
   margin: 0 0 5px;
   color: hsl(var(--foreground));
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.2;
   font-weight: 600;
 }
@@ -1025,13 +1041,13 @@ a {
 .about-benefit-copy p {
   margin: 0;
   color: hsl(var(--muted-foreground));
-  font-size: 15px;
-  line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .about-showcase-cta {
   width: fit-content;
-  margin-top: 26px;
+  margin-top: 36px;
   min-width: 156px;
   justify-content: center;
 }
@@ -1879,13 +1895,16 @@ a {
   .about-showcase {
     grid-template-columns: 1fr;
     gap: 38px;
-    margin-top: 56px;
+    margin-top: 0;
+    padding: 56px var(--layout-gutter);
   }
 
   .about-showcase-media {
     max-width: 680px;
     width: 100%;
     margin: 0 auto;
+    height: 530px;
+    max-height: 530px;
   }
 
   .about-showcase-image-large {
@@ -1914,7 +1933,7 @@ a {
   }
 
   .about-showcase-copy h2 {
-    max-width: 13ch;
+    max-width: 100%;
   }
 
   .about-showcase-description {
@@ -1934,16 +1953,20 @@ a {
 
   .about-showcase {
     gap: 28px;
-    margin-top: 48px;
+    margin-top: 0;
+    padding: 42px var(--layout-gutter);
   }
 
   .about-showcase-media {
     gap: 16px;
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     grid-template-areas:
       "info"
       "large"
       "small";
+    height: auto;
+    max-height: none;
   }
 
   .about-showcase-image-large {
@@ -1968,10 +1991,12 @@ a {
     font-size: 18px;
   }
 
-  .about-showcase-info-icon {
-    width: 52px;
-    height: 52px;
-    font-size: 29px;
+  .about-showcase-info-icons {
+    gap: 10px;
+  }
+
+  .about-showcase-info-icons i {
+    font-size: 35px;
   }
 
   .about-showcase-overlay {
@@ -1993,6 +2018,7 @@ a {
   }
 
   .about-showcase-benefits {
+    grid-template-columns: 1fr;
     gap: 12px;
   }
 
@@ -2006,6 +2032,10 @@ a {
 
   .about-benefit-copy p {
     font-size: 14px;
+  }
+
+  .about-benefit:last-child {
+    grid-column: auto;
   }
 
   .about-showcase-cta {
@@ -2510,22 +2540,24 @@ a {
     font-size: 17px;
   }
 
-  .about-showcase-info-icon {
-    width: 46px;
-    height: 46px;
-    font-size: 24px;
+  .about-showcase-info-icons {
+    gap: 8px;
+  }
+
+  .about-showcase-info-icons i {
+    font-size: 35px;
   }
 
   .about-benefit {
-    grid-template-columns: 44px minmax(0, 1fr);
+    grid-template-columns: 40px minmax(0, 1fr);
     gap: 12px;
     padding: 14px;
   }
 
   .about-benefit-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 17px;
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
   }
 
   .about-showcase-kicker {
