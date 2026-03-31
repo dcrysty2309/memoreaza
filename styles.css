@@ -978,6 +978,22 @@ a {
   font-weight: 600;
 }
 
+.about-showcase-title-accent {
+  position: relative;
+  display: inline-block;
+}
+
+.about-showcase-title-accent::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 10px;
+  background: url("https://www.radiustheme.com/demo/wordpress/themes/quiklearn/wp-content/themes/quiklearn/assets/element/underline.svg") no-repeat left bottom / contain;
+  pointer-events: none;
+}
+
 .about-showcase-description {
   max-width: none;
   margin: 18px 0 0;
