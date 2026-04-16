@@ -1,0 +1,40 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(12px);
+}
+
+.inner {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.nav {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--color-text);
+}
+

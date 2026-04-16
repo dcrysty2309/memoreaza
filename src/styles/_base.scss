@@ -1,0 +1,46 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  font-family: var(--font-sans);
+  background: radial-gradient(1200px 800px at 15% -10%, rgba(124, 58, 237, 0.28), transparent 55%),
+    radial-gradient(1000px 700px at 85% 0%, rgba(56, 189, 248, 0.18), transparent 55%), var(--color-bg);
+  color: var(--color-text);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+

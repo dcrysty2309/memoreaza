@@ -1,12 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { SiteShellComponent } from './layout/site-shell/site-shell.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [SiteShellComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('memoreaza');
+  // App shell lives in SiteShellComponent.
 }
