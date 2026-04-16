@@ -1,3 +1,5 @@
+@use './breakpoints' as bp;
+
 :root {
   --font-display: Sora, var(--font-sans);
   --font-sans:
@@ -52,20 +54,26 @@
   --line-height-snug: 1.25;
   --line-height-normal: 1.5;
 
-  /* Figma shows ~1263px; rounded for saner grids. */
-  --container-max: 1264px;
+  /* Figma shows ~1263px; rounded for responsive sanity. */
+  --container-max: 1260px;
   --container-padding: 18px;
 
   --section-y: 72px;
 }
 
-@media (min-width: 640px) {
+@include bp.up(bp.$bp-sm) {
+  :root {
+    --container-padding: 20px;
+  }
+}
+
+@include bp.up(bp.$bp-md) {
   :root {
     --container-padding: 24px;
   }
 }
 
-@media (min-width: 960px) {
+@include bp.up(bp.$bp-lg) {
   :root {
     --section-y: 96px;
   }
