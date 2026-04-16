@@ -1,13 +1,30 @@
 <header class="header">
-  <app-container>
-    <div class="inner">
-      <a class="brand" routerLink="/" aria-label="Memorează — Acasă">Memorează</a>
+  <div class="topbar">
+    <app-container>
+      <div class="topbar-inner">
+        <span class="topbar-text">Conținut bazat pe programa școlară</span>
+        <a class="topbar-link" routerLink="/">Vezi un exemplu</a>
+      </div>
+    </app-container>
+  </div>
 
-      <nav class="nav" aria-label="Navigație principală">
-        <a class="nav-link" routerLink="/">Acasă</a>
-        <a class="nav-link" routerLink="/aplicatie">Aplicație</a>
-      </nav>
-    </div>
-  </app-container>
+  <div class="mainbar">
+    <app-container>
+      <div class="inner">
+        <a class="brand" routerLink="/" aria-label="Memorează — Acasă">
+          <span class="brand-mark" aria-hidden="true">🎓</span>
+          <span class="brand-name">Memorează</span>
+        </a>
+
+        <nav class="nav" aria-label="Navigație principală">
+          <a class="nav-link" routerLink="/lectii">Lecții</a>
+          <a class="nav-link" routerLink="/cum-functioneaza">Cum funcționează</a>
+          <a class="nav-link" routerLink="/blog">Blog</a>
+          <a class="nav-link" routerLink="/contact">Contact</a>
+        </nav>
+
+        <a appButton variant="primary" size="sm" routerLink="/aplicatie">Începe Gratuit</a>
+      </div>
+    </app-container>
+  </div>
 </header>
-

@@ -1,12 +1,13 @@
-.eyebrow {
-  margin: 0 0 var(--space-3);
-  color: var(--color-muted);
-  font-weight: 600;
-  font-size: var(--font-size-sm);
+.badge {
+  margin-bottom: var(--space-4);
 }
 
 .title {
   margin: 0 0 var(--space-4);
+}
+
+.title-accent {
+  color: var(--color-primary);
 }
 
 .subtitle {
@@ -16,14 +17,102 @@
   max-width: 56ch;
 }
 
-.preview {
-  display: grid;
+.cta {
+  margin-top: var(--space-6);
+  display: flex;
   gap: var(--space-4);
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.card {
-  height: 120px;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 100%);
+.play {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(91, 90, 240, 0.12);
+  color: var(--color-primary);
+  font-size: 12px;
+  margin-left: 2px;
 }
+
+.preview {
+  position: relative;
+  min-height: 420px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.35) 100%);
+  border: 1px solid rgba(230, 234, 244, 0.8);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(closest-side at 60% 40%, rgba(91, 90, 240, 0.25), transparent 65%);
+  filter: blur(6px);
+}
+
+.owl {
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
+  width: 240px;
+  height: 240px;
+  border-radius: 40px;
+  background: radial-gradient(circle at 40% 35%, rgba(91, 90, 240, 0.22), rgba(91, 90, 240, 0.08) 60%, transparent 70%),
+    linear-gradient(180deg, rgba(91, 90, 240, 0.12), transparent 80%);
+}
+
+.float {
+  position: absolute;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(230, 234, 244, 0.9);
+  box-shadow: var(--shadow-md);
+  min-width: 180px;
+}
+
+.float-title {
+  font-weight: 800;
+  color: rgba(15, 23, 42, 0.85);
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.float-sub {
+  color: rgba(15, 23, 42, 0.55);
+  font-size: 12px;
+}
+
+.float--left {
+  left: 24px;
+  top: 94px;
+}
+
+.float--right {
+  right: 24px;
+  top: 76px;
+}
+
+.float--bottom {
+  left: 34px;
+  bottom: 32px;
+  min-width: 220px;
+}
+
+@media (max-width: 900px) {
+  .preview {
+    min-height: 340px;
+  }
+
+  .owl {
+    right: 22px;
+    width: 210px;
+    height: 210px;
+  }
+}
+
