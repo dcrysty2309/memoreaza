@@ -1,3 +1,7 @@
+.hero {
+  background: var(--color-surface);
+}
+
 .grid-2 {
   align-items: stretch;
 }
@@ -49,10 +53,7 @@
 }
 
 .glow {
-  position: absolute;
-  inset: -80px -60px -80px -100px;
-  background: radial-gradient(closest-side at 62% 45%, rgba(84, 62, 232, 0.32), transparent 68%);
-  filter: blur(10px);
+  display: none;
 }
 
 .owl {
