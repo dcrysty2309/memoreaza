@@ -1,14 +1,20 @@
 html {
   height: 100%;
+  color-scheme: dark;
 }
 
 body {
   min-height: 100%;
   margin: 0;
   font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
   background: radial-gradient(1200px 800px at 15% -10%, rgba(124, 58, 237, 0.28), transparent 55%),
     radial-gradient(1000px 700px at 85% 0%, rgba(56, 189, 248, 0.18), transparent 55%), var(--color-bg);
   color: var(--color-text);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 *,
@@ -28,6 +34,16 @@ a {
   color: inherit;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-primary) 70%, #fff);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
 button,
 input,
 textarea,
@@ -43,4 +59,3 @@ h5,
 h6 {
   margin: 0;
 }
-

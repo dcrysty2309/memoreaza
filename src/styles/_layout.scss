@@ -1,0 +1,22 @@
+.section {
+  padding-block: var(--section-y);
+}
+
+.stack {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+

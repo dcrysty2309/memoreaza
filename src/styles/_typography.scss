@@ -1,0 +1,25 @@
+/* Minimal typography layer; we’ll align it to Figma once font + scale are confirmed. */
+
+.h1,
+h1 {
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.03em;
+}
+
+.h2,
+h2 {
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: var(--line-height-snug);
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  font-size: var(--font-size-lg);
+  color: var(--color-muted);
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
