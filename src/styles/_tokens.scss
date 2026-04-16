@@ -1,6 +1,7 @@
 :root {
+  --font-display: Sora, var(--font-sans);
   --font-sans:
-    Inter,
+    'Open Sans',
     ui-sans-serif,
     system-ui,
     -apple-system,
@@ -51,7 +52,8 @@
   --line-height-snug: 1.25;
   --line-height-normal: 1.5;
 
-  --container-max: 1120px;
+  /* Figma shows ~1263px; rounded for saner grids. */
+  --container-max: 1264px;
   --container-padding: 18px;
 
   --section-y: 72px;
