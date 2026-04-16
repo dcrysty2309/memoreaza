@@ -7,6 +7,7 @@
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
   font-weight: 600;
+  line-height: normal;
   text-decoration: none;
   cursor: pointer;
   transition:
@@ -77,8 +78,11 @@
   padding: 16px 30px;
   border-radius: 70px;
   gap: 10px;
+  color: #fff;
+  font-family: var(--font-display);
   font-size: 16px;
   font-weight: 600;
+  line-height: normal;
 }
 
 .badge {
