@@ -46,11 +46,11 @@
 }
 
 .inner {
-  height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
+  padding: 24px 0;
 }
 
 .brand {

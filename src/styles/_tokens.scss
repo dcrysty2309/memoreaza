@@ -21,7 +21,7 @@
   --color-surface: #ffffff;
   --color-text: #0f172a;
   --color-muted: #64748b;
-  --color-border: #e6eaf4;
+  --color-border: #e2e8f0;
 
   --color-primary: #543ee8;
   --color-primary-hover: #4632db;
@@ -83,5 +83,12 @@
 @include bp.up(bp.$bp-lg) {
   :root {
     --section-y: 96px;
+  }
+}
+
+/* Figma desktop frame: 1440px with ~88px gutters => 1264px content width. */
+@include bp.up(bp.$bp-xl) {
+  :root {
+    --container-max: 1264px;
   }
 }
