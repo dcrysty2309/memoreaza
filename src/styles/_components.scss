@@ -30,13 +30,13 @@
 }
 
 .btn--primary {
-  background: var(--color-primary);
+  background: var(--gradient-primary);
   color: var(--color-primary-contrast);
   box-shadow: 0 10px 30px rgba(91, 90, 240, 0.25);
 }
 
 .btn--primary:hover {
-  background: var(--color-primary-hover);
+  filter: brightness(0.98);
 }
 
 .btn--ghost {
@@ -70,6 +70,15 @@
   padding: 14px 20px;
   border-radius: var(--radius-pill);
   font-size: var(--font-size-lg);
+}
+
+.btn--cta {
+  width: 215px;
+  padding: 16px 30px;
+  border-radius: 70px;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .badge {
