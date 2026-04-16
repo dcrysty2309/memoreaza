@@ -23,12 +23,12 @@
   --color-muted: #64748b;
   --color-border: #e6eaf4;
 
-  --color-primary: #5b5af0;
-  --color-primary-hover: #4a49e6;
+  --color-primary: #543ee8;
+  --color-primary-hover: #4632db;
   --color-primary-contrast: #ffffff;
 
-  --color-link: #5b5af0;
-  --color-link-hover: #4a49e6;
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-primary-hover);
 
   --radius-sm: 10px;
   --radius-md: 14px;

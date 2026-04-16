@@ -47,19 +47,15 @@
   color: var(--color-text);
 }
 
-.brand-mark {
-  font-size: 22px;
-}
-
-.brand-name {
-  font-family: var(--font-display);
-  font-weight: 800;
-  letter-spacing: -0.02em;
+.brand-logo {
+  height: 38px;
+  width: auto;
+  display: block;
 }
 
 .nav {
   display: flex;
-  gap: var(--space-4);
+  gap: 60px;
   align-items: center;
 }
 

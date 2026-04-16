@@ -78,8 +78,8 @@
   gap: 8px;
   padding: 8px 14px;
   border-radius: var(--radius-pill);
-  background: rgba(91, 90, 240, 0.08);
-  color: rgba(91, 90, 240, 1);
+  background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  color: var(--color-primary);
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.06em;
@@ -87,8 +87,12 @@
 }
 
 .nav-link {
-  color: rgba(15, 23, 42, 0.7);
-  font-weight: 600;
+  color: #0f172a;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .nav-link:hover {
