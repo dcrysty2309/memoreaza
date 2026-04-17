@@ -1,5 +1,7 @@
 .hero {
   background: var(--color-surface);
+  padding-top: 30px;
+  padding-bottom: var(--section-y);
 }
 
 .grid-2 {
@@ -8,6 +10,7 @@
 
 .hero-grid {
   grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
 }
 
 .badge {
@@ -65,10 +68,10 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  padding: 16px 0 0;
+  padding: 0;
   object-fit: contain;
-  object-position: right bottom;
-  transform: scale(1.18);
+  object-position: center;
+  transform: none;
   filter: drop-shadow(0 34px 90px rgba(84, 62, 232, 0.22));
 }
 
@@ -116,8 +119,8 @@
   }
 
   .owl {
-    padding: 10px 0 0;
-    transform: scale(1.08);
+    padding: 0;
+    transform: none;
   }
 }
 
