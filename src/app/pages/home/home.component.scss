@@ -56,7 +56,7 @@
 .preview {
   position: relative;
   min-height: 560px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .glow {
@@ -64,15 +64,11 @@
 }
 
 .owl {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  display: block;
   width: 100%;
-  height: 100%;
-  padding: 0;
-  object-fit: contain;
-  object-position: center;
-  transform: none;
-  filter: drop-shadow(0 34px 90px rgba(84, 62, 232, 0.22));
+  height: auto;
+  margin-left: auto;
 }
 
 .float {
@@ -119,8 +115,7 @@
   }
 
   .owl {
-    padding: 0;
-    transform: none;
+    margin-left: auto;
   }
 }
 
