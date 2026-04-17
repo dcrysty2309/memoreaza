@@ -29,7 +29,23 @@
   overflow: visible;
 }
 
-.badge {
+.hero-pill {
+  display: inline-flex;
+  padding: 12px 28px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background: rgba(108, 99, 255, 0.1);
+
+  color: #6c63ff;
+  font-family: Inter, var(--font-sans);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+
   margin-bottom: var(--space-4);
 }
 
