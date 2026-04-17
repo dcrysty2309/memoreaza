@@ -50,11 +50,20 @@
 }
 
 .title {
-  margin: 0 0 var(--space-4);
+  margin: 0 0 20px;
+  color: #0f172a;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 4.2vw, 56px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: none;
 }
 
 .title-accent {
   color: var(--color-primary);
+  font: inherit;
+  text-transform: none;
 }
 
 .subtitle {
@@ -158,6 +167,13 @@
 
   .preview {
     width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 56px;
+    line-height: 78px;
   }
 }
 
