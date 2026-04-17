@@ -50,7 +50,7 @@
 }
 
 .title {
-  margin: 0 0 20px;
+  margin: 0 0 35px;
   color: #0f172a;
   font-family: var(--font-display);
   font-size: clamp(40px, 4.2vw, 56px);
@@ -67,14 +67,14 @@
 }
 
 .subtitle {
-  margin: 0 0 35px;
+  margin: 0;
   color: var(--color-muted);
   font-size: var(--font-size-lg);
   max-width: 56ch;
 }
 
 .cta {
-  margin-top: 0;
+  margin-top: 35px;
   display: flex;
   gap: var(--space-4);
   flex-wrap: wrap;
