@@ -13,8 +13,13 @@
   justify-content: center;
   gap: 0;
   padding: 15px 0;
-  font-size: 13px;
-  color: rgba(15, 23, 42, 0.75);
+
+  color: #0f172a;
+  font-family: Inter, var(--font-sans);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .topbar-arrow {
@@ -37,3 +42,26 @@
   text-underline-position: from-font;
 }
 
+@media (max-width: 768px) {
+  .topbar-inner {
+    font-family: Inter, var(--font-sans);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .topbar-link {
+    font-family: Inter, var(--font-sans);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 1024px) {
+  :host {
+    display: none;
+  }
+}

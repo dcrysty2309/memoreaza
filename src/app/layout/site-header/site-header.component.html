@@ -1,8 +1,41 @@
-<header class="header">
+<header class="header" [class.mobile-open]="mobileOpen">
   <app-container>
     <div class="inner">
+      <button
+        class="menu-btn"
+        type="button"
+        aria-label="Deschide meniul"
+        [attr.aria-expanded]="mobileOpen"
+        (click)="toggleMobileMenu()"
+      >
+        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="29" viewBox="0 0 24 29" fill="none" aria-hidden="true" focusable="false">
+          <path
+            d="M3.99695 14.5H19.9847"
+            stroke="#543EE8"
+            stroke-width="1.99847"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M3.99695 21.75H19.9847"
+            stroke="#543EE8"
+            stroke-width="1.99847"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M3.99695 7.25H19.9847"
+            stroke="#543EE8"
+            stroke-width="1.99847"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+
       <a class="brand" routerLink="/" aria-label="Memorează — Acasă">
-        <img class="brand-logo" src="assets/logo_memoreaza.png" alt="" aria-hidden="true" />
+        <img class="brand-logo brand-logo--desktop" src="assets/logo_memoreaza.png" alt="" aria-hidden="true" />
+        <img class="brand-logo brand-logo--mobile" src="assets/logo-memoreaza-mobile.png" alt="" aria-hidden="true" />
       </a>
 
       <nav class="nav" aria-label="Navigație principală">
@@ -12,7 +45,32 @@
         <a class="nav-link" routerLink="/contact">Contact</a>
       </nav>
 
-      <a appButton variant="primary" size="cta" routerLink="/aplicatie">Începe Gratuit</a>
+      <a class="header-cta" appButton variant="primary" size="cta" routerLink="/aplicatie">Începe Gratuit</a>
     </div>
   </app-container>
+
+  <div
+    class="mobile-overlay"
+    [class.is-open]="mobileOpen"
+    (click)="closeMobileMenu()"
+    aria-hidden="true"
+  ></div>
+
+  <div class="mobile-panel" [class.is-open]="mobileOpen">
+    <div class="mobile-topbar">
+      <a class="mobile-brand" routerLink="/" aria-label="Memorează — Acasă" (click)="closeMobileMenu()">
+        <img class="mobile-brand-logo" src="assets/logo-memoreaza-mobile.png" alt="" aria-hidden="true" />
+      </a>
+      <button class="mobile-close" type="button" aria-label="Închide meniul" (click)="closeMobileMenu()">
+        +
+      </button>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Navigație mobil">
+      <a class="mobile-link" routerLink="/lectii" (click)="closeMobileMenu()">Lecții</a>
+      <a class="mobile-link" routerLink="/cum-functioneaza" (click)="closeMobileMenu()">Cum funcționează</a>
+      <a class="mobile-link" routerLink="/blog" (click)="closeMobileMenu()">Blog</a>
+      <a class="mobile-link" routerLink="/contact" (click)="closeMobileMenu()">Contact</a>
+    </nav>
+  </div>
 </header>

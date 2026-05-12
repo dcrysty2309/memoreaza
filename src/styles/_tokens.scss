@@ -17,7 +17,7 @@
     'Segoe UI Symbol';
 
   /* Light theme tokens (match Figma homepage). */
-  --color-bg: #f6f8ff;
+  --color-bg: #ffffff;
   --color-surface: #ffffff;
   --color-text: #0f172a;
   --color-muted: #64748b;
@@ -64,9 +64,10 @@
 
   /* Figma shows ~1263px; rounded for responsive sanity. */
   --container-max: 1260px;
-  --container-padding: 18px;
+  --container-padding: 20px;
 
-  --section-y: 72px;
+  /* Section spacing (padding-block). */
+  --section-y: 40px;
 }
 
 @include bp.up(bp.$bp-sm) {
@@ -83,7 +84,7 @@
 
 @include bp.up(bp.$bp-lg) {
   :root {
-    --section-y: 96px;
+    --section-y: 50px;
   }
 }
 

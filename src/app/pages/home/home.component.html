@@ -10,27 +10,46 @@
 
       <div class="cta">
         <a appButton variant="primary" size="cta" routerLink="/aplicatie">Începe Gratuit</a>
-        <a appButton variant="outline" size="lg" routerLink="/demo">
-          <span>Vezi Demo</span>
-          <span class="play" aria-hidden="true">▶</span>
+        <a appButton variant="outline" size="cta" routerLink="/demo">
+          <span class="demo-label">Vezi Demo</span>
+          <span class="play" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12ZM23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12Z"
+                fill="#543EE8"
+              />
+              <path
+                d="M9.52832 7.11819C9.85344 6.94429 10.2479 6.96346 10.5547 7.16799L16.5547 11.168C16.8329 11.3535 17 11.6657 17 12C17 12.3344 16.8329 12.6466 16.5547 12.8321L10.5547 16.8321C10.2479 17.0366 9.85344 17.0558 9.52832 16.8819C9.20316 16.7078 9 16.3688 9 16V8.00002C9 7.63123 9.20316 7.29221 9.52832 7.11819ZM11 14.1309L14.1973 12L11 9.86819V14.1309Z"
+                fill="#543EE8"
+              />
+            </svg>
+          </span>
         </a>
       </div>
     </div>
 
     <div class="hero-right" aria-hidden="true">
       <div class="preview">
-        <img class="owl" src="assets/hero-owl.png" alt="" />
+        <img class="owl" src="assets/hero-owl.webp" alt="" />
         <div class="float float--left">
-          <div class="float-title">⭐ Continuă</div>
+          <div class="float-title">
+            <img class="float-icon" src="assets/icon-star.svg" alt="" aria-hidden="true" />
+            <span>Continuă</span>
+          </div>
           <div class="float-sub">Ești pe drumul cel bun</div>
         </div>
         <div class="float float--right">
-          <div class="float-title">✅ Exersează</div>
+          <div class="float-title">
+            <img class="float-icon" src="assets/icon-check-circle.svg" alt="" aria-hidden="true" />
+            <span>Exersează</span>
+          </div>
           <div class="float-sub">Identifică figurile de stil</div>
         </div>
         <div class="float float--bottom">
-          <div class="float-title">📒 Flashcarduri</div>
-          <div class="float-sub"><strong>Termen:</strong> Aliterație</div>
+          <div class="float-title">
+            <img class="float-icon" src="assets/icon-book.svg" alt="" aria-hidden="true" />
+            <span>Flashcarduri</span>
+          </div>
           <div class="float-sub">Repetarea sunetelor inițiale</div>
         </div>
       </div>
@@ -38,10 +57,432 @@
   </div>
 </section>
 
-<section class="section placeholder">
+<section class="section steps">
   <app-container>
-    <h2>Cum funcționează</h2>
-    <p class="lead">Secțiune placeholder ca să putem verifica sticky menu la scroll. Urmează implementarea 1:1 după Figma.</p>
-    <div class="spacer" aria-hidden="true"></div>
+    <div class="steps-grid" aria-label="Cum funcționează">
+      <article class="step-card">
+        <div class="step-head">
+          <div class="step-icon" aria-hidden="true">
+            <img class="step-icon-img" src="assets/step-watch.svg" alt="" aria-hidden="true" />
+          </div>
+          <div class="step-meta">
+            <div class="step-label">Pas 1</div>
+            <h3 class="step-title">Vizionează</h3>
+          </div>
+        </div>
+        <p class="step-desc">
+          Urmărești lecții video explicate simplu și clar. Lecțiile sunt structurate logic, ca să înțelegi rapid ideile
+          principale.
+        </p>
+      </article>
+
+      <article class="step-card">
+        <div class="step-head">
+          <div class="step-icon" aria-hidden="true">
+            <img class="step-icon-img" src="assets/step-practice.svg" alt="" aria-hidden="true" />
+          </div>
+          <div class="step-meta">
+            <div class="step-label">Pas 2</div>
+            <h3 class="step-title">Exersează</h3>
+          </div>
+        </div>
+        <p class="step-desc">
+          Exersezi ceea ce ai învățat prin întrebări clare și relevante. Fiecare exercițiu te ajută să îți consolidezi
+          cunoștințele și să corectezi greșelile.
+        </p>
+      </article>
+
+      <article class="step-card">
+        <div class="step-head">
+          <div class="step-icon" aria-hidden="true">
+            <img class="step-icon-img" src="assets/step-review.svg" alt="" aria-hidden="true" />
+          </div>
+          <div class="step-meta">
+            <div class="step-label">Pas 3</div>
+            <h3 class="step-title">Fixează</h3>
+          </div>
+        </div>
+        <p class="step-desc">
+          Fixezi informațiile importante prin recapitulare activă. Conceptele esențiale sunt prezentate pe scurt, pentru
+          a le reține mai ușor.
+        </p>
+      </article>
+    </div>
+  </app-container>
+</section>
+
+<section class="section platform-preview">
+  <app-container>
+    <div class="platform-grid">
+      <div class="platform-copy">
+        <span class="platform-pill">PREVIZUALIZARE PLATFORMĂ</span>
+        <h2 class="platform-title">
+          Tot ce ai nevoie<br />
+          pentru învățare
+        </h2>
+        <p class="platform-desc">
+          Descoperă o experiență completă de învățare — lecții video explicate clar, quizuri interactive pentru verificare
+          și flashcarduri inteligente pentru memorare rapidă.
+        </p>
+        <p class="platform-desc">
+          Totul este conceput pentru a te ajuta să înțelegi mai bine, să exersezi eficient și să reții informația pe
+          termen lung.
+        </p>
+      </div>
+
+      <div class="platform-media" aria-hidden="true">
+        <img class="platform-image" src="assets/platform-preview-cards-cropped.png" alt="" aria-hidden="true" />
+      </div>
+
+      <div class="platform-actions">
+        <a appButton class="platform-cta" variant="outline" size="cta" routerLink="/demo">
+          <span class="demo-label">Descoperă platforma</span>
+          <span class="play" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12ZM23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12Z"
+                fill="#543EE8"
+              />
+              <path
+                d="M9.52832 7.11819C9.85344 6.94429 10.2479 6.96346 10.5547 7.16799L16.5547 11.168C16.8329 11.3535 17 11.6657 17 12C17 12.3344 16.8329 12.6466 16.5547 12.8321L10.5547 16.8321C10.2479 17.0366 9.85344 17.0558 9.52832 16.8819C9.20316 16.7078 9 16.3688 9 16V8.00002C9 7.63123 9.20316 7.29221 9.52832 7.11819ZM11 14.1309L14.1973 12L11 9.86819V14.1309Z"
+                fill="#543EE8"
+              />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </app-container>
+</section>
+
+<section class="section why">
+  <app-container>
+    <div class="why-head">
+      <span class="why-pill">CUM TE AJUTĂ</span>
+      <h2 class="why-title">
+        Platformă creată pentru <br class="why-break" />
+        <span class="title-accent u-underline-swoosh">învățare</span> eficientă
+      </h2>
+      <p class="why-subtitle">
+        Totul este conceput pentru a te ajuta să înțelegi rapid conceptele, să exersezi eficient și să reții
+        informația pe termen lung.
+      </p>
+    </div>
+
+    <div class="features-grid" aria-label="Avantaje">
+      <article class="feature-card">
+        <div class="feature-head">
+          <img class="feature-icon feature-icon--1" src="assets/feature-clear-explanations.svg" alt="" aria-hidden="true" />
+          <h3 class="feature-title">Explicații clare și structurate</h3>
+        </div>
+        <p class="feature-desc">
+          Conceptele sunt explicate simplu, pas cu pas, astfel încât să înțelegi logica din spate și să poți aplica ușor
+          în exerciții.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-head">
+          <img class="feature-icon feature-icon--2" src="assets/feature-video-lessons.png" alt="" aria-hidden="true" />
+          <h3 class="feature-title">Lecții video ușor de urmărit</h3>
+        </div>
+        <p class="feature-desc">
+          Fiecare lecție include explicații video clare, organizate logic, astfel încât să poți învăța în ritmul tău fără
+          să te pierzi.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-head">
+          <img class="feature-icon feature-icon--3" src="assets/feature-flashcards.png" alt="" aria-hidden="true" />
+          <h3 class="feature-title">Flashcarduri pentru memorare rapidă</h3>
+        </div>
+        <p class="feature-desc">
+          Repetă ideile esențiale folosind flashcarduri create pentru a fixa informația eficient și a o reține mai ușor
+          pe termen lung.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-head">
+          <img class="feature-icon feature-icon--4" src="assets/feature-interactive-quizzes.png" alt="" aria-hidden="true" />
+          <h3 class="feature-title">Exersează cu quizuri interactive</h3>
+        </div>
+        <p class="feature-desc">
+          Testează-ți cunoștințele prin întrebări relevante și vezi rapid unde mai ai de lucrat pentru a progresa
+          constant.
+        </p>
+      </article>
+    </div>
+  </app-container>
+</section>
+
+<section class="section works">
+  <app-container>
+    <div class="works-head">
+      <span class="works-pill">EXPLOREAZĂ CURSURILE DE LITERATURĂ</span>
+      <h2 class="works-title">
+        Învață din <span class="title-accent u-underline-swoosh">opere</span><br class="works-break" />
+        literare reale
+      </h2>
+      <p class="works-subtitle">
+        Explorează textele esențiale din programa școlară prin lecții structurate și instrumente interactive.
+      </p>
+    </div>
+  </app-container>
+
+  <div class="works-cards">
+    <app-container>
+      <div class="works-grid" aria-label="Opere literare">
+        <article class="work-card">
+          <div class="work-cover" aria-hidden="true">
+            <img class="work-bg" src="assets/work-thumb-blob.png" alt="" aria-hidden="true" />
+            <span class="work-tag">MATERIE DE BAC</span>
+            <img class="work-thumb" src="assets/work-book-luceafarul.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="work-body">
+            <h3 class="work-title">Luceafărul</h3>
+	            <div class="work-author">de Mihai Eminescu</div>
+	            <div class="work-meta">
+	              <span class="work-meta-item">
+	                <svg class="work-meta-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+	                  <path d="M6.41667 4.08342C6.41667 3.61929 6.23216 3.1743 5.90397 2.84611C5.57579 2.51792 5.1308 2.33341 4.66667 2.33341H1.75V9.91675H5.25C5.66326 9.91675 6.0649 10.0269 6.41667 10.2301V4.08342ZM7.58334 12.2501C7.58334 12.5722 7.32217 12.8334 7 12.8334C6.67784 12.8334 6.41667 12.5722 6.41667 12.2501C6.41667 11.9407 6.29366 11.644 6.07487 11.4252C5.85608 11.2064 5.55942 11.0834 5.25 11.0834H1.16667C0.844503 11.0834 0.583336 10.8222 0.583336 10.5001V1.75008C0.583336 1.42792 0.844503 1.16675 1.16667 1.16675H4.66667C5.44022 1.16675 6.18186 1.47426 6.72884 2.02124C7.27582 2.56822 7.58334 3.30987 7.58334 4.08342V12.2501Z" fill="currentColor" />
+	                  <path d="M6.41666 12.2501V4.08342C6.41666 3.30987 6.72418 2.56822 7.27116 2.02124C7.81814 1.47426 8.55978 1.16675 9.33333 1.16675H12.8333C13.1555 1.16675 13.4167 1.42792 13.4167 1.75008V10.5001C13.4167 10.8222 13.1555 11.0834 12.8333 11.0834H8.75C8.44058 11.0834 8.14392 11.2064 7.92513 11.4252C7.70634 11.644 7.58333 11.9407 7.58333 12.2501C7.58333 12.5722 7.32216 12.8334 7 12.8334C6.67783 12.8334 6.41666 12.5722 6.41666 12.2501ZM7.58333 10.2301C7.9351 10.0269 8.33674 9.91675 8.75 9.91675H12.25V2.33341H9.33333C8.8692 2.33341 8.42421 2.51792 8.09603 2.84611C7.76784 3.1743 7.58333 3.61929 7.58333 4.08342V10.2301Z" fill="currentColor" />
+	                </svg>
+	                <span>3 lecții</span>
+	              </span>
+	              <span class="work-meta-sep" aria-hidden="true">|</span>
+	              <span class="work-meta-item">
+	                <svg class="work-meta-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+	                  <path d="M11.6667 2.91675C11.6667 2.76204 11.6052 2.61371 11.4958 2.50431C11.3864 2.39492 11.238 2.33341 11.0833 2.33341H2.91667C2.76196 2.33341 2.61363 2.39492 2.50424 2.50431C2.39484 2.61371 2.33334 2.76204 2.33334 2.91675V10.8419L3.6709 9.50431L3.71363 9.46558C3.81744 9.38051 3.94795 9.33342 4.08334 9.33342H11.0833C11.238 9.33342 11.3864 9.27191 11.4958 9.16252C11.6052 9.05312 11.6667 8.90479 11.6667 8.75008V2.91675ZM12.8333 8.75008C12.8333 9.21421 12.6488 9.6592 12.3206 9.98739C11.9925 10.3156 11.5475 10.5001 11.0833 10.5001H4.32488L2.16244 12.6625C1.99561 12.8293 1.74467 12.8793 1.5267 12.789C1.30876 12.6987 1.16667 12.486 1.16667 12.2501V2.91675C1.16667 2.45262 1.35118 2.00763 1.67937 1.67944C2.00756 1.35125 2.45254 1.16675 2.91667 1.16675H11.0833C11.5475 1.16675 11.9925 1.35125 12.3206 1.67944C12.6488 2.00763 12.8333 2.45262 12.8333 2.91675V8.75008Z" fill="currentColor" />
+	                </svg>
+	                <span>15 flashcarduri</span>
+	              </span>
+	            </div>
+            <p class="work-desc">Teme, simboluri, tablouri și structura romantică a poemului filozofic.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-cover" aria-hidden="true">
+            <img class="work-bg" src="assets/work-thumb-blob.png" alt="" aria-hidden="true" />
+            <span class="work-tag">MATERIE DE BAC</span>
+            <img class="work-thumb" src="assets/work-book-moara-cu-noroc.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="work-body">
+            <h3 class="work-title">Moara cu noroc</h3>
+	            <div class="work-author">de Ioan Slavici</div>
+	            <div class="work-meta">
+	              <span class="work-meta-item">
+	                <svg class="work-meta-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+	                  <path d="M6.41667 4.08342C6.41667 3.61929 6.23216 3.1743 5.90397 2.84611C5.57579 2.51792 5.1308 2.33341 4.66667 2.33341H1.75V9.91675H5.25C5.66326 9.91675 6.0649 10.0269 6.41667 10.2301V4.08342ZM7.58334 12.2501C7.58334 12.5722 7.32217 12.8334 7 12.8334C6.67784 12.8334 6.41667 12.5722 6.41667 12.2501C6.41667 11.9407 6.29366 11.644 6.07487 11.4252C5.85608 11.2064 5.55942 11.0834 5.25 11.0834H1.16667C0.844503 11.0834 0.583336 10.8222 0.583336 10.5001V1.75008C0.583336 1.42792 0.844503 1.16675 1.16667 1.16675H4.66667C5.44022 1.16675 6.18186 1.47426 6.72884 2.02124C7.27582 2.56822 7.58334 3.30987 7.58334 4.08342V12.2501Z" fill="currentColor" />
+	                  <path d="M6.41666 12.2501V4.08342C6.41666 3.30987 6.72418 2.56822 7.27116 2.02124C7.81814 1.47426 8.55978 1.16675 9.33333 1.16675H12.8333C13.1555 1.16675 13.4167 1.42792 13.4167 1.75008V10.5001C13.4167 10.8222 13.1555 11.0834 12.8333 11.0834H8.75C8.44058 11.0834 8.14392 11.2064 7.92513 11.4252C7.70634 11.644 7.58333 11.9407 7.58333 12.2501C7.58333 12.5722 7.32216 12.8334 7 12.8334C6.67783 12.8334 6.41666 12.5722 6.41666 12.2501ZM7.58333 10.2301C7.9351 10.0269 8.33674 9.91675 8.75 9.91675H12.25V2.33341H9.33333C8.8692 2.33341 8.42421 2.51792 8.09603 2.84611C7.76784 3.1743 7.58333 3.61929 7.58333 4.08342V10.2301Z" fill="currentColor" />
+	                </svg>
+	                <span>4 lecții</span>
+	              </span>
+	              <span class="work-meta-sep" aria-hidden="true">|</span>
+	              <span class="work-meta-item">
+	                <svg class="work-meta-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+	                  <path d="M11.6667 2.91675C11.6667 2.76204 11.6052 2.61371 11.4958 2.50431C11.3864 2.39492 11.238 2.33341 11.0833 2.33341H2.91667C2.76196 2.33341 2.61363 2.39492 2.50424 2.50431C2.39484 2.61371 2.33334 2.76204 2.33334 2.91675V10.8419L3.6709 9.50431L3.71363 9.46558C3.81744 9.38051 3.94795 9.33342 4.08334 9.33342H11.0833C11.238 9.33342 11.3864 9.27191 11.4958 9.16252C11.6052 9.05312 11.6667 8.90479 11.6667 8.75008V2.91675ZM12.8333 8.75008C12.8333 9.21421 12.6488 9.6592 12.3206 9.98739C11.9925 10.3156 11.5475 10.5001 11.0833 10.5001H4.32488L2.16244 12.6625C1.99561 12.8293 1.74467 12.8793 1.5267 12.789C1.30876 12.6987 1.16667 12.486 1.16667 12.2501V2.91675C1.16667 2.45262 1.35118 2.00763 1.67937 1.67944C2.00756 1.35125 2.45254 1.16675 2.91667 1.16675H11.0833C11.5475 1.16675 11.9925 1.35125 12.3206 1.67944C12.6488 2.00763 12.8333 2.45262 12.8333 2.91675V8.75008Z" fill="currentColor" />
+	                </svg>
+	                <span>20 flashcarduri</span>
+	              </span>
+	            </div>
+            <p class="work-desc">Subiect, personaje și conflicte morale într-o nuvelă realist psihologică.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-cover" aria-hidden="true">
+            <img class="work-bg" src="assets/work-thumb-blob.png" alt="" aria-hidden="true" />
+            <span class="work-tag">MATERIE DE BAC</span>
+            <img class="work-thumb" src="assets/work-book-harap-alb.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="work-body">
+            <h3 class="work-title">Povestea lui Harap-Alb</h3>
+	            <div class="work-author">de Ion Creangă</div>
+	            <div class="work-meta">
+	              <span class="work-meta-item">
+	                <svg class="work-meta-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+	                  <path d="M6.41667 4.08342C6.41667 3.61929 6.23216 3.1743 5.90397 2.84611C5.57579 2.51792 5.1308 2.33341 4.66667 2.33341H1.75V9.91675H5.25C5.66326 9.91675 6.0649 10.0269 6.41667 10.2301V4.08342ZM7.58334 12.2501C7.58334 12.5722 7.32217 12.8334 7 12.8334C6.67784 12.8334 6.41667 12.5722 6.41667 12.2501C6.41667 11.9407 6.29366 11.644 6.07487 11.4252C5.85608 11.2064 5.55942 11.0834 5.25 11.0834H1.16667C0.844503 11.0834 0.583336 10.8222 0.583336 10.5001V1.75008C0.583336 1.42792 0.844503 1.16675 1.16667 1.16675H4.66667C5.44022 1.16675 6.18186 1.47426 6.72884 2.02124C7.27582 2.56822 7.58334 3.30987 7.58334 4.08342V12.2501Z" fill="currentColor" />
+	                  <path d="M6.41666 12.2501V4.08342C6.41666 3.30987 6.72418 2.56822 7.27116 2.02124C7.81814 1.47426 8.55978 1.16675 9.33333 1.16675H12.8333C13.1555 1.16675 13.4167 1.42792 13.4167 1.75008V10.5001C13.4167 10.8222 13.1555 11.0834 12.8333 11.0834H8.75C8.44058 11.0834 8.14392 11.2064 7.92513 11.4252C7.70634 11.644 7.58333 11.9407 7.58333 12.2501C7.58333 12.5722 7.32216 12.8334 7 12.8334C6.67783 12.8334 6.41666 12.5722 6.41666 12.2501ZM7.58333 10.2301C7.9351 10.0269 8.33674 9.91675 8.75 9.91675H12.25V2.33341H9.33333C8.8692 2.33341 8.42421 2.51792 8.09603 2.84611C7.76784 3.1743 7.58333 3.61929 7.58333 4.08342V10.2301Z" fill="currentColor" />
+	                </svg>
+	                <span>4 lecții</span>
+	              </span>
+	              <span class="work-meta-sep" aria-hidden="true">|</span>
+	              <span class="work-meta-item">
+	                <svg class="work-meta-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+	                  <path d="M11.6667 2.91675C11.6667 2.76204 11.6052 2.61371 11.4958 2.50431C11.3864 2.39492 11.238 2.33341 11.0833 2.33341H2.91667C2.76196 2.33341 2.61363 2.39492 2.50424 2.50431C2.39484 2.61371 2.33334 2.76204 2.33334 2.91675V10.8419L3.6709 9.50431L3.71363 9.46558C3.81744 9.38051 3.94795 9.33342 4.08334 9.33342H11.0833C11.238 9.33342 11.3864 9.27191 11.4958 9.16252C11.6052 9.05312 11.6667 8.90479 11.6667 8.75008V2.91675ZM12.8333 8.75008C12.8333 9.21421 12.6488 9.6592 12.3206 9.98739C11.9925 10.3156 11.5475 10.5001 11.0833 10.5001H4.32488L2.16244 12.6625C1.99561 12.8293 1.74467 12.8793 1.5267 12.789C1.30876 12.6987 1.16667 12.486 1.16667 12.2501V2.91675C1.16667 2.45262 1.35118 2.00763 1.67937 1.67944C2.00756 1.35125 2.45254 1.16675 2.91667 1.16675H11.0833C11.5475 1.16675 11.9925 1.35125 12.3206 1.67944C12.6488 2.00763 12.8333 2.45262 12.8333 2.91675V8.75008Z" fill="currentColor" />
+	                </svg>
+	                <span>20 flashcarduri</span>
+	              </span>
+	            </div>
+            <p class="work-desc">Structura epică, personaje simbolice și universul narativ al basmului cult.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-cover" aria-hidden="true">
+            <img class="work-bg" src="assets/work-thumb-blob.png" alt="" aria-hidden="true" />
+            <span class="work-tag">MATERIE DE BAC</span>
+            <img class="work-thumb" src="assets/work-book-o-scrisoare-pierduta.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="work-body">
+            <h3 class="work-title">O scrisoare pierdută</h3>
+	            <div class="work-author">de I.L. Caragiale</div>
+	            <div class="work-meta">
+	              <span class="work-meta-item">
+	                <svg class="work-meta-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+	                  <path d="M6.41667 4.08342C6.41667 3.61929 6.23216 3.1743 5.90397 2.84611C5.57579 2.51792 5.1308 2.33341 4.66667 2.33341H1.75V9.91675H5.25C5.66326 9.91675 6.0649 10.0269 6.41667 10.2301V4.08342ZM7.58334 12.2501C7.58334 12.5722 7.32217 12.8334 7 12.8334C6.67784 12.8334 6.41667 12.5722 6.41667 12.2501C6.41667 11.9407 6.29366 11.644 6.07487 11.4252C5.85608 11.2064 5.55942 11.0834 5.25 11.0834H1.16667C0.844503 11.0834 0.583336 10.8222 0.583336 10.5001V1.75008C0.583336 1.42792 0.844503 1.16675 1.16667 1.16675H4.66667C5.44022 1.16675 6.18186 1.47426 6.72884 2.02124C7.27582 2.56822 7.58334 3.30987 7.58334 4.08342V12.2501Z" fill="currentColor" />
+	                  <path d="M6.41666 12.2501V4.08342C6.41666 3.30987 6.72418 2.56822 7.27116 2.02124C7.81814 1.47426 8.55978 1.16675 9.33333 1.16675H12.8333C13.1555 1.16675 13.4167 1.42792 13.4167 1.75008V10.5001C13.4167 10.8222 13.1555 11.0834 12.8333 11.0834H8.75C8.44058 11.0834 8.14392 11.2064 7.92513 11.4252C7.70634 11.644 7.58333 11.9407 7.58333 12.2501C7.58333 12.5722 7.32216 12.8334 7 12.8334C6.67783 12.8334 6.41666 12.5722 6.41666 12.2501ZM7.58333 10.2301C7.9351 10.0269 8.33674 9.91675 8.75 9.91675H12.25V2.33341H9.33333C8.8692 2.33341 8.42421 2.51792 8.09603 2.84611C7.76784 3.1743 7.58333 3.61929 7.58333 4.08342V10.2301Z" fill="currentColor" />
+	                </svg>
+	                <span>4 lecții</span>
+	              </span>
+	              <span class="work-meta-sep" aria-hidden="true">|</span>
+	              <span class="work-meta-item">
+	                <svg class="work-meta-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+	                  <path d="M11.6667 2.91675C11.6667 2.76204 11.6052 2.61371 11.4958 2.50431C11.3864 2.39492 11.238 2.33341 11.0833 2.33341H2.91667C2.76196 2.33341 2.61363 2.39492 2.50424 2.50431C2.39484 2.61371 2.33334 2.76204 2.33334 2.91675V10.8419L3.6709 9.50431L3.71363 9.46558C3.81744 9.38051 3.94795 9.33342 4.08334 9.33342H11.0833C11.238 9.33342 11.3864 9.27191 11.4958 9.16252C11.6052 9.05312 11.6667 8.90479 11.6667 8.75008V2.91675ZM12.8333 8.75008C12.8333 9.21421 12.6488 9.6592 12.3206 9.98739C11.9925 10.3156 11.5475 10.5001 11.0833 10.5001H4.32488L2.16244 12.6625C1.99561 12.8293 1.74467 12.8793 1.5267 12.789C1.30876 12.6987 1.16667 12.486 1.16667 12.2501V2.91675C1.16667 2.45262 1.35118 2.00763 1.67937 1.67944C2.00756 1.35125 2.45254 1.16675 2.91667 1.16675H11.0833C11.5475 1.16675 11.9925 1.35125 12.3206 1.67944C12.6488 2.00763 12.8333 2.45262 12.8333 2.91675V8.75008Z" fill="currentColor" />
+	                </svg>
+	                <span>20 flashcarduri</span>
+	              </span>
+	            </div>
+            <p class="work-desc">Satiră socială, personaje comice și tehnici specifice comediei caragialești.</p>
+          </div>
+        </article>
+      </div>
+    </app-container>
+  </div>
+</section>
+
+<section class="section faq">
+  <app-container>
+    <div class="faq-surface">
+      <img class="faq-owl" src="assets/faq-owl.png" alt="" aria-hidden="true" />
+
+      <div class="faq-content">
+        <span class="faq-pill">ÎNTREBĂRI FRECVENTE</span>
+        <h2 class="faq-title">
+          Ai întrebări?<br class="faq-title-break" />
+          Avem <span class="title-accent u-underline-swoosh">răspunsuri</span>
+        </h2>
+        <p class="faq-subtitle">
+          Găsește răspunsuri la întrebări frecvente despre cum funcționează platforma,<br class="faq-subtitle-break" />
+          ce poți învăța și cum te ajută să studiezi eficient.
+        </p>
+
+        <div class="faq-accordion" aria-label="Întrebări și răspunsuri">
+          @for (item of faqItems; track item.id) {
+            <article class="faq-item" [class.is-open]="openFaqId === item.id">
+              <h3 class="faq-question">
+                <button
+                  class="faq-trigger"
+                  type="button"
+                  (click)="toggleFaq(item.id)"
+                  [attr.aria-expanded]="openFaqId === item.id"
+                  [attr.aria-controls]="'faq-panel-' + item.id"
+                  [attr.id]="'faq-trigger-' + item.id"
+                >
+                  <span class="faq-question-text">{{ item.question }}</span>
+                  <span class="faq-chevron" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path
+                        d="M5.83337 8.33337L10 12.5L14.1667 8.33337"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </h3>
+
+              <div
+                class="faq-panel"
+                [class.is-open]="openFaqId === item.id"
+                role="region"
+                [attr.id]="'faq-panel-' + item.id"
+                [attr.aria-labelledby]="'faq-trigger-' + item.id"
+                [attr.aria-hidden]="openFaqId === item.id ? null : 'true'"
+              >
+                <div class="faq-panel-inner">
+                  <p class="faq-answer">{{ item.answer }}</p>
+                </div>
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </div>
+  </app-container>
+</section>
+
+<section class="section blog">
+  <app-container>
+    <div class="blog-head">
+      <span class="blog-pill">ARTICOLE</span>
+      <h2 class="blog-title">
+        Explorează <span class="title-accent u-underline-swoosh">articolele</span> noastre
+      </h2>
+      <p class="blog-subtitle">
+        Idei simple și practice ca să înțelegi mai repede, să exersezi mai bine și să reții pe termen lung.
+      </p>
+    </div>
+
+    <div class="blog-grid" aria-label="Articole recente">
+      @for (post of blogPosts; track post.id) {
+        <article class="blog-card">
+          <div
+            class="blog-thumb"
+            [style.background-image]="'url(' + post.thumbSrc + ')'"
+            role="img"
+            [attr.aria-label]="post.thumbAlt"
+          ></div>
+
+          <div class="blog-card-body">
+            <div class="blog-card-head">
+              <span class="blog-tag">{{ post.tag }}</span>
+            </div>
+            <h3 class="blog-card-title">{{ post.title }}</h3>
+            <p class="blog-card-excerpt">{{ post.excerptShort }}</p>
+            <a class="blog-card-link" routerLink="/blog">Citește →</a>
+          </div>
+        </article>
+      }
+    </div>
+
+    <div class="blog-cta">
+      <a class="blog-all-link" routerLink="/blog">Vezi toate articolele</a>
+    </div>
+  </app-container>
+</section>
+
+<section class="section newsletter">
+  <app-container>
+    <div class="newsletter-surface">
+        <div class="newsletter-left">
+          <span class="newsletter-pill">RĂMÂI INFORMAT</span>
+          <h2 class="newsletter-title">Ultimele noutăți</h2>
+          <p class="newsletter-subtitle">
+            Intră în comunitatea noastră și descoperă constant lecții noi, tips-uri utile și resurse care chiar te ajută
+            să progresezi.
+          </p>
+
+        <form class="newsletter-form" (submit)="$event.preventDefault()" aria-label="Abonare newsletter">
+          <label class="sr-only" for="newsletter-email">Email</label>
+          <input
+            id="newsletter-email"
+            class="newsletter-input"
+            type="email"
+            inputmode="email"
+            autocomplete="email"
+            placeholder="Introdu emailul tău"
+          />
+          <button class="newsletter-btn" type="submit">Abonează-te</button>
+        </form>
+      </div>
+
+      <img class="newsletter-owl" src="assets/newsletter-owl.png" alt="" aria-hidden="true" />
+    </div>
   </app-container>
 </section>

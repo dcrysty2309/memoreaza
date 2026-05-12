@@ -9,4 +9,14 @@ import { ButtonDirective } from '../../ui/button/button.directive';
   templateUrl: './site-header.component.html',
   styleUrl: './site-header.component.scss',
 })
-export class SiteHeaderComponent {}
+export class SiteHeaderComponent {
+  mobileOpen = false;
+
+  toggleMobileMenu() {
+    this.mobileOpen = !this.mobileOpen;
+  }
+
+  closeMobileMenu() {
+    this.mobileOpen = false;
+  }
+}

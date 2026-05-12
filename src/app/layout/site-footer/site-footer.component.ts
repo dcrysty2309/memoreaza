@@ -9,5 +9,9 @@ import { ContainerComponent } from '../../ui/container/container.component';
 })
 export class SiteFooterComponent {
   protected readonly year = new Date().getFullYear();
-}
+  protected openColId: 'about' | 'resources' | 'company' | null = null;
 
+  protected toggleCol(id: 'about' | 'resources' | 'company') {
+    this.openColId = this.openColId === id ? null : id;
+  }
+}
