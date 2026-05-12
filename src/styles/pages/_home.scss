@@ -1143,6 +1143,23 @@ app-home {
     justify-self: end;
   }
 
+  /* Prevent the left column (form) from getting too narrow around ~900px. */
+  @media (max-width: 960px) {
+    .newsletter-surface {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+      gap: 24px;
+    }
+
+    .newsletter-owl {
+      width: min(320px, 100%);
+    }
+
+    .newsletter-btn {
+      padding: 0 18px;
+      font-size: 16px;
+    }
+  }
+
   /* Keep text left + image right until <768px */
   @media (max-width: 767.98px) {
     .newsletter-surface {
