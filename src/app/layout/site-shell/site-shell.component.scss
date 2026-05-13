@@ -3,6 +3,26 @@
   width: 100%;
 }
 
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  opacity: 1;
+  transition: opacity 220ms ease;
+}
+
+.preloader.is-hiding {
+  opacity: 0;
+}
+
+.preloader-gif {
+  width: 150px;
+  height: 133px;
+}
+
 .shell {
   min-height: 100dvh;
   display: flex;
