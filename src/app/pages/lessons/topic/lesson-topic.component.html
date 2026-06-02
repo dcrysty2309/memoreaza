@@ -1,0 +1,46 @@
+@if (vm$ | async; as vm) {
+  @if (vm) {
+    <section class="topic">
+      <app-container>
+        <header class="head">
+          <div class="crumbs">
+            <a routerLink="/lectii">Lecții</a>
+            <span aria-hidden="true">/</span>
+            <span>{{ vm.subject.title }}</span>
+            <span aria-hidden="true">/</span>
+            <span>{{ vm.grade.title }}</span>
+          </div>
+
+          <h1 class="title">{{ vm.topic.title }}</h1>
+          <p class="subtitle">{{ vm.topic.lessons.length }} sublecții</p>
+        </header>
+
+        @if (vm.topic.comingSoon) {
+          <div class="empty">Se lucrează la această temă. Revino în curând.</div>
+        } @else {
+          <div class="list" aria-label="Sublecții">
+            @for (lesson of vm.topic.lessons; track lesson.id) {
+              <a class="row" [routerLink]="['/lectii', vm.topic.slug, lesson.slug]">
+                <div class="left">
+                  <div class="index">{{ lesson.order }}</div>
+                  <div class="main">
+                    <div class="name">{{ lesson.title }}</div>
+                    <div class="meta">{{ lesson.videoLabel }}</div>
+                  </div>
+                </div>
+                <div class="right">Deschide →</div>
+              </a>
+            }
+          </div>
+        }
+      </app-container>
+    </section>
+  } @else {
+    <section class="topic">
+      <app-container>
+        <div class="empty">Tema nu a fost găsită. <a routerLink="/lectii">Înapoi la lecții</a></div>
+      </app-container>
+    </section>
+  }
+}
+

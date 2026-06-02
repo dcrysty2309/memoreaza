@@ -1,0 +1,154 @@
+.topic {
+  padding: 40px 0 60px;
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: rgba(71, 85, 105, 0.95);
+  font-family: Inter, var(--font-sans);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.crumbs a {
+  color: #543ee8;
+}
+
+.title {
+  margin: 14px 0 0;
+  color: #0f172a;
+  font-family: Sora, var(--font-sans);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  color: #475569;
+  font-family: Inter, var(--font-sans);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.list {
+  margin-top: 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  background: #fff;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.75);
+  text-decoration: none;
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.row:hover {
+  background: rgba(248, 250, 252, 0.85);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.index {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: rgba(84, 62, 232, 0.08);
+  color: #543ee8;
+  font-family: Inter, var(--font-sans);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  flex: 0 0 auto;
+}
+
+.main {
+  min-width: 0;
+}
+
+.name {
+  color: #0f172a;
+  font-family: Sora, var(--font-sans);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meta {
+  margin-top: 6px;
+  color: rgba(71, 85, 105, 0.95);
+  font-family: Inter, var(--font-sans);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.right {
+  color: #543ee8;
+  font-family: Inter, var(--font-sans);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.empty {
+  margin-top: 18px;
+  border-radius: 18px;
+  border: 1px dashed rgba(226, 232, 240, 0.95);
+  background: rgba(248, 250, 252, 0.85);
+  padding: 22px 18px;
+  text-align: center;
+  color: rgba(71, 85, 105, 0.95);
+  font-family: Inter, var(--font-sans);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@media (max-width: 1024px) {
+  .topic {
+    padding: 26px 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+

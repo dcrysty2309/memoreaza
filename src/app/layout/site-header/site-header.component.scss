@@ -121,6 +121,11 @@
   }
 }
 
+.header-cta.is-hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .mobile-panel {
   display: none;
 }

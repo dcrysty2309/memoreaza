@@ -1,0 +1,33 @@
+.static {
+  padding: 60px 0;
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  color: #0f172a;
+  font-family: Sora, var(--font-sans);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.subtitle {
+  margin: 14px auto 0;
+  max-width: 620px;
+  text-align: center;
+  color: #475569;
+  font-family: Inter, var(--font-sans);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@media (max-width: 1024px) {
+  .static {
+    padding: 40px 0;
+  }
+}
+

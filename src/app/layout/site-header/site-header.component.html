@@ -45,7 +45,18 @@
         <a class="nav-link" routerLink="/contact">Contact</a>
       </nav>
 
-      <a class="header-cta" appButton variant="primary" size="cta" routerLink="/aplicatie">Începe Gratuit</a>
+      <a
+        class="header-cta"
+        [class.is-hidden]="!isHome"
+        [attr.aria-hidden]="!isHome"
+        [attr.tabindex]="isHome ? null : -1"
+        appButton
+        variant="primary"
+        size="cta"
+        routerLink="/aplicatie"
+      >
+        Începe Gratuit
+      </a>
     </div>
   </app-container>
 

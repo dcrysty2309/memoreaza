@@ -1,0 +1,110 @@
+<section class="lessons">
+  <app-container>
+    <header class="head">
+      <h1 class="title">Lecții</h1>
+      <p class="subtitle">Alege materia și clasa. Materiile marcate „Coming soon” vor fi activate pe rând.</p>
+    </header>
+
+    <div class="filters" aria-label="Filtre lecții">
+      <div class="row">
+        <div class="label">Materie</div>
+        <div class="subjects" role="list">
+          @for (subject of subjects; track subject.id) {
+            <button
+              type="button"
+              class="subject-card"
+              role="listitem"
+              [class.is-active]="subject.id === selectedSubjectId"
+              [class.is-disabled]="!!subject.comingSoon"
+              (click)="selectSubject(subject)"
+            >
+              <div class="subject-top">
+                <div class="subject-icon" aria-hidden="true"></div>
+                @if (subject.comingSoon) {
+                  <span class="soon">Coming soon</span>
+                }
+              </div>
+              <div class="subject-title">{{ subject.title }}</div>
+              <div class="subject-meta">
+                @if (subject.comingSoon) {
+                  În curând
+                } @else {
+                  Lecții disponibile
+                }
+              </div>
+            </button>
+          }
+        </div>
+      </div>
+
+      @if (activeSubject?.grades?.length) {
+        <div class="row">
+          <div class="label">Clasă</div>
+          <div class="grades" role="list">
+            @for (grade of activeSubject!.grades; track grade.id) {
+              <button
+                type="button"
+                class="grade"
+                role="listitem"
+                [class.is-active]="grade.id === selectedGradeId"
+                [class.is-disabled]="!!grade.comingSoon"
+                (click)="selectGrade(grade.id)"
+              >
+                <span>{{ grade.title }}</span>
+                @if (grade.comingSoon) {
+                  <span class="soon">Coming soon</span>
+                }
+              </button>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    @if (activeGrade && !activeGrade.comingSoon) {
+      <div class="list-wrap">
+        <div class="list-head">
+          <div class="list-title">{{ activeSubject?.title }} • {{ activeGrade.title }}</div>
+          <div class="list-meta">{{ activeGrade.topics.length }} teme</div>
+        </div>
+
+        <div class="lesson-list" aria-label="Teme disponibile">
+          @for (topic of activeGrade.topics; track topic.id) {
+            <a
+              class="lesson-row"
+              [class.is-disabled]="!!topic.comingSoon"
+              [attr.aria-disabled]="!!topic.comingSoon"
+              [routerLink]="topic.comingSoon ? null : ['/lectii', topic.slug]"
+              (click)="topic.comingSoon && $event.preventDefault()"
+            >
+              <div class="lesson-left">
+                <div class="lesson-index">{{ topic.lessons.length || '—' }}</div>
+                <div class="lesson-main">
+                  <div class="lesson-name">{{ topic.title }}</div>
+                  <div class="lesson-sub">
+                    @if (topic.comingSoon) {
+                      Coming soon
+                    } @else {
+                      {{ topic.lessons.length }} sublecții
+                    }
+                  </div>
+                </div>
+              </div>
+              <div class="lesson-right">
+                @if (topic.comingSoon) {
+                  În curând
+                } @else {
+                  Deschide →
+                }
+              </div>
+            </a>
+          }
+        </div>
+      </div>
+    } @else {
+      <div class="empty">
+        Se lucrează la această clasă. Revino în curând.
+      </div>
+    }
+  </app-container>
+</section>

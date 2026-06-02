@@ -1,0 +1,223 @@
+@if (vm$ | async; as vm) {
+  @if (vm) {
+    <section class="lesson">
+      <app-container>
+        <header class="lesson-head">
+          <div class="head-left">
+            <h1 class="lesson-title">{{ vm.lesson.title }}</h1>
+            <div class="lesson-progress">
+              <div class="lesson-progress-label">Lecția {{ vm.lesson.order }} din {{ vm.progressTotal }}</div>
+              <div class="bar" role="progressbar" [attr.aria-valuenow]="vm.progressPct" aria-valuemin="0" aria-valuemax="100">
+                <div class="bar-fill" [style.width.%]="vm.progressPct"></div>
+              </div>
+            </div>
+          </div>
+
+          <a class="next-btn" [routerLink]="['/lectii', vm.topic.slug, vm.nextLesson.slug]">Next Lesson</a>
+        </header>
+
+        <div class="tabs" role="tablist" aria-label="Conținut lecție">
+          <button
+            class="tab"
+            [class.is-active]="activeTab === 'video'"
+            type="button"
+            role="tab"
+            [attr.aria-selected]="activeTab === 'video'"
+            (click)="setTab('video')"
+          >
+            Video
+          </button>
+          <button
+            class="tab"
+            [class.is-active]="activeTab === 'quiz'"
+            type="button"
+            role="tab"
+            [attr.aria-selected]="activeTab === 'quiz'"
+            (click)="setTab('quiz')"
+          >
+            Quiz
+          </button>
+          <button
+            class="tab"
+            [class.is-active]="activeTab === 'flashcarduri'"
+            type="button"
+            role="tab"
+            [attr.aria-selected]="activeTab === 'flashcarduri'"
+            (click)="setTab('flashcarduri')"
+          >
+            Flashcarduri
+          </button>
+        </div>
+
+        <div class="layout">
+          <div class="main">
+            @if (activeTab === 'video') {
+              <div class="video">
+                <div
+                  class="video-inner"
+                  role="img"
+                  aria-label="Video demo"
+                  style="--lesson-video-image: url('assets/blog-thumb-luceafarul.png')"
+                >
+                  <button class="play" type="button" aria-label="Pornește video">
+                    <span class="play-icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="video-controls" aria-hidden="true">
+                    <div class="video-time">0:00 / 14:23</div>
+                    <div class="video-line"></div>
+                  </div>
+                </div>
+              </div>
+            }
+
+            @if (activeTab === 'quiz') {
+              <div class="panel-block">
+                <div class="panel-block-head">
+                  <div class="panel-block-title">Quiz</div>
+                  <div class="panel-block-right">
+                    @let s = quizScore(vm.quiz);
+                    <div class="score">
+                      <span class="score-strong">{{ s.correct }}</span>/<span>{{ s.total }}</span>
+                      <span class="score-muted">corecte</span>
+                    </div>
+                    <button class="panel-block-action" type="button" (click)="resetQuiz()">Resetează</button>
+                  </div>
+                </div>
+
+                @if (!vm.quiz.length) {
+                  <div class="panel-empty">Nu există quiz pentru această lecție încă.</div>
+                } @else {
+                  <div class="quiz">
+                    @for (q of vm.quiz; track q.id) {
+                      <div class="quiz-item">
+                        <div class="quiz-q">{{ q.question }}</div>
+                        <div class="quiz-opts" role="list">
+                          @for (opt of q.options; track $index) {
+                            <button
+                              type="button"
+                              class="quiz-opt"
+                              role="listitem"
+                              [class.is-locked]="quizAnswers.has(q.id)"
+                              [class.is-selected]="quizAnswers.get(q.id) === $index"
+                              [class.is-correct]="quizAnswers.has(q.id) && $index === q.correctIndex"
+                              [class.is-wrong]="quizAnswers.get(q.id) === $index && $index !== q.correctIndex"
+                              (click)="answerQuestion(q.id, $index)"
+                            >
+                              {{ opt }}
+                            </button>
+                          }
+                        </div>
+                      </div>
+                    }
+                  </div>
+                }
+              </div>
+            }
+
+            @if (activeTab === 'flashcarduri') {
+              <div class="panel-block">
+                <div class="panel-block-head">
+                  <div class="panel-block-title">Flashcarduri</div>
+                  <div class="panel-block-hint">Click pe card ca să-l întorci</div>
+                </div>
+
+                @if (!vm.flashcards.length) {
+                  <div class="panel-empty">Nu există flashcarduri pentru această lecție încă.</div>
+                } @else {
+                  <div class="cards" aria-label="Set flashcarduri">
+                    @for (card of vm.flashcards; track card.id) {
+                      <button
+                        type="button"
+                        class="card"
+                        [class.is-flipped]="flippedCards.has(card.id)"
+                        (click)="toggleCard(card.id)"
+                      >
+                        <div class="card-inner">
+                          <div class="card-face card-front">
+                            <div class="card-label">Întrebare</div>
+                            <div class="card-text">{{ card.front }}</div>
+                          </div>
+                          <div class="card-face card-back">
+                            <div class="card-label">Răspuns</div>
+                            <div class="card-text">{{ card.back }}</div>
+                          </div>
+                        </div>
+                      </button>
+                    }
+                  </div>
+                }
+              </div>
+            }
+
+            <article class="content">
+              <h2 class="content-title">{{ vm.lesson.contentTitle }}</h2>
+
+              @for (p of vm.lesson.paragraphs; track $index) {
+                <p class="content-p">{{ p }}</p>
+              }
+
+              <h3 class="content-sub">{{ vm.lesson.bulletsTitle }}</h3>
+              <ul class="list">
+                @for (item of vm.lesson.bullets; track $index) {
+                  <li>{{ item }}</li>
+                }
+              </ul>
+
+              <h3 class="content-sub">{{ vm.lesson.symbolsTitle }}</h3>
+              <ul class="list">
+                @for (item of vm.lesson.symbols; track $index) {
+                  <li>{{ item }}</li>
+                }
+              </ul>
+            </article>
+          </div>
+
+          <aside class="side" aria-label="Panou lecții">
+            <div class="panel">
+              <div class="panel-title">Lecții</div>
+              <div class="lesson-list" role="list">
+                @for (item of vm.topic.lessons; track item.id) {
+                  <a
+                    class="lesson-item"
+                    [class.is-active]="item.slug === vm.lesson.slug"
+                    [routerLink]="['/lectii', vm.topic.slug, item.slug]"
+                    role="listitem"
+                  >
+                    {{ item.title }}
+                  </a>
+                }
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-title">Progres</div>
+              <div class="progress-row">{{ vm.progressDone }} din {{ vm.progressTotal }} lecții completate</div>
+              <div class="bar bar--side" role="progressbar" [attr.aria-valuenow]="vm.progressPct" aria-valuemin="0" aria-valuemax="100">
+                <div class="bar-fill" [style.width.%]="vm.progressPct"></div>
+              </div>
+            </div>
+
+            <div class="panel hint">
+              <div class="hint-top">
+                <div class="hint-title">Hint de la Bufniță</div>
+                <img class="hint-owl" src="assets/faq-owl.png" alt="" aria-hidden="true" />
+              </div>
+              <p class="hint-text">
+                Luceafărul simbolizează aspirația spre cunoaștere absolută și depășirea limitelor umane.
+              </p>
+              <button class="complete" type="button">Complete</button>
+            </div>
+          </aside>
+        </div>
+      </app-container>
+    </section>
+  } @else {
+    <section class="lesson">
+      <app-container>
+        <div class="missing">
+          Lecția nu a fost găsită. <a routerLink="/lectii">Înapoi la lecții</a>
+        </div>
+      </app-container>
+    </section>
+  }
+}
